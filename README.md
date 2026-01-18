@@ -1,6 +1,6 @@
 # 👵💬 Manu, sua Agente Financeira
 
-> Agente de IA Generativa que ajuda a utilizar com mais facilidade o aplicativo do banco. 
+> Agente de IA Generativa que ajuda idosos a utilizarem o aplicativo do banco de forma simples e segura.
 
 ## 💡 O Que é a Manu?
 
@@ -37,8 +37,8 @@ flowchart TD
 
 ```
 ├── data/                              
-│   ├── historico_de_transacoes.csv     # Perfil do cliente
-│   └── perfil_dos_clientes.json        # Histórico financeiro do cliente
+│   ├── historico_de_transacoes.csv     # Histórico financeiro do cliente
+│   └── perfil_do_cliente.json        # Perfil do cliente
 │
 ├── services/                     
 │   ├── __init__.py 
@@ -50,7 +50,7 @@ flowchart TD
 │   └── app.py                          # Aplicação Streamlit - Interface
 └── docs/                         
    ├── 01-documentacao-agente.md        # Descrição sobre o Agente e suas características 
-   ├── 02-testes-agente.md              # Prompts para os testes            
+   └── 02-testes-agente.md              # Prompts para os testes            
 ```
 
 ## 🤖 Como Executar
@@ -66,7 +66,7 @@ flowchart TD
 ### 2. Instalar Dependências
 
 ```bash
-pip install streamlit pandas json openai
+pip install streamlit pandas openai
 ```
 
 ### 3. Rodar a Manu 
@@ -74,19 +74,6 @@ pip install streamlit pandas json openai
 ```bash
 streamlit run src/app.py
 ```
-
-## 🎯 Exemplo de Uso
-
-**Pergunta:** "Como pago a conta de luz?"  
-**Manu:** "Abra o boleto da conta de luz e leia o codigo de barras ou o QR code. Após abra o aplicativo de banco e selecione a opção de pagar boleto ou ler qr code. Verifique se tem saldo na conta antes de seguir com o pagamento. Conseguiu realizar o pagamento?"
-
-## 📊 Métricas de Avaliação
-
-| Métrica | Objetivo |
-|---------|----------|
-| **Assertividade** | O agente responde o que foi perguntado? |
-| **Segurança** | Evita inventar informações (anti-alucinação)? |
-| **Coerência** | A resposta é adequada ao perfil do cliente? |
 
 ## 🎬 Diferenciais
 
