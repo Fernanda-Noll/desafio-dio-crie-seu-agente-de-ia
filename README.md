@@ -48,9 +48,9 @@ flowchart TD
 │   ├── __init__.py
 │   ├── script_prompt.py                # Leitura dos arquivos e contexto prompt
 │   └── app.py                          # Aplicação Streamlit - Interface
-└── docs/                          # Documentação completa
-   ├── 01-documentacao-agente.md  # Caso de uso e persona
-   ├── 02-base-conhecimento.md    # Estratégia de dados              
+└── docs/                         
+   ├── 01-documentacao-agente.md        # Descrição sobre o Agente e suas características 
+   ├── 02-testes-agente.md              # Prompts para os testes            
 ```
 
 ## 🤖 Como Executar
@@ -59,8 +59,8 @@ flowchart TD
 
 ```bash
 # Baixar em: https://lmstudio.ai/download
-faça donwload do modelo: meta-llama-3.1-8b-instruct
-start server
+# Faça donwload do modelo: meta-llama-3.1-8b-instruct
+# Inicie o modelo no aplicativo
 ```
 
 ### 2. Instalar Dependências
