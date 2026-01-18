@@ -1,0 +1,100 @@
+# 👵💬 Manu, sua Agente Financeira
+
+> Agente de IA Generativa que ajuda a utilizar com mais facilidade o aplicativo do banco. 
+
+## 💡 O Que é a Manu?
+
+A Manu é uma assistente financeira que ajuda os idosos a utilizar o aplicativo, ela explica o passo a passo das operações e é intuitiva. 
+
+**O que a Manu faz:**
+- ✅ Explica conceitos financeiros de forma simples
+- ✅ Usa dados do cliente como exemplos práticos
+- ✅ Responde dúvidas sobre a utilização do aplicativo
+- ✅ Analisa padrões de gastos
+
+**O que a Manu NÃO faz:**
+- ❌ Não recomenda investimentos específicos
+- ❌ NÃO inventa informações
+- ❌ Não substitui um profissional certificado
+
+## 🏗️ Arquitetura
+
+```mermaid
+flowchart TD
+    A[Usuário] --> B[Streamlit]
+    B --> C[LM Studio - LLM Local]
+    C --> D[Base de Conhecimento]
+    D --> C
+    C --> E[Resposta]
+```
+
+**Stack:**
+- Interface: Streamlit
+- LM STUDIO: Local (modelo local `meta-llama-3.1-8b-instruct`)
+- Dados: JSON/CSV mockados
+
+## 📁 Estrutura do Projeto
+
+```
+├── data/                              
+│   ├── historico_de_transacoes.csv     # Perfil do cliente
+│   └── perfil_dos_clientes.json        # Histórico financeiro do cliente
+│
+├── services/                     
+│   ├── __init__.py 
+│   └── conexao_lm_studio.py            # Conexão com o LM Studio 
+│
+├── src/
+│   ├── __init__.py
+│   ├── script_prompt.py                # Leitura dos arquivos e contexto prompt
+│   └── app.py                          # Aplicação Streamlit - Interface
+└── docs/                          # Documentação completa
+   ├── 01-documentacao-agente.md  # Caso de uso e persona
+   ├── 02-base-conhecimento.md    # Estratégia de dados              
+```
+
+## 🤖 Como Executar
+
+### 1. Instalar LM Studio
+
+```bash
+# Baixar em: https://lmstudio.ai/download
+faça donwload do modelo: meta-llama-3.1-8b-instruct
+start server
+```
+
+### 2. Instalar Dependências
+
+```bash
+pip install streamlit pandas json openai
+```
+
+### 3. Rodar a Manu 
+
+```bash
+streamlit run src/app.py
+```
+
+## 🎯 Exemplo de Uso
+
+**Pergunta:** "Como pago a conta de luz?"  
+**Manu:** "Abra o boleto da conta de luz e leia o codigo de barras ou o QR code. Após abra o aplicativo de banco e selecione a opção de pagar boleto ou ler qr code. Verifique se tem saldo na conta antes de seguir com o pagamento. Conseguiu realizar o pagamento?"
+
+## 📊 Métricas de Avaliação
+
+| Métrica | Objetivo |
+|---------|----------|
+| **Assertividade** | O agente responde o que foi perguntado? |
+| **Segurança** | Evita inventar informações (anti-alucinação)? |
+| **Coerência** | A resposta é adequada ao perfil do cliente? |
+
+## 🎬 Diferenciais
+
+- **Personalização:** Usa os dados do próprio cliente nos exemplos
+- **100% Local:** Roda com LM Studio, sem enviar dados para APIs externas
+- **Público-alvo:** Idosos
+- **Seguro:** Estratégias de anti-alucinação documentadas
+
+## 📝 Documentação Completa
+
+Toda a documentação técnica, estratégias de prompt e casos de teste estão disponíveis na pasta [`docs/`](./docs/).
